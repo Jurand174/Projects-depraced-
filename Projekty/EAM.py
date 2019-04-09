@@ -7,16 +7,25 @@ import pandas as pd
 import numpy as np
 import plotly.plotly as py
 import plotly.graph_objs as go
-import flask
-import glob
-import os
 
-
+c=pd.read_csv(r'C:\Users\Jurand\Desktop\EAM projekt\Kasia\S4_0004.txt')
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.layout = html.Div([
-    dcc.Graph()
-    ])
+
+
+
+    dcc.Graph(
+        figure={
+'data':[go.Scatter3d(
+            x=c['MagX'].tolist(),
+            y=c['MagY'].tolist(),
+            z=c['MagZ'].tolist()
+
+)]}
+
+    )
+    ],style={'height':'200%'})
 
 
 
