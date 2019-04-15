@@ -18,14 +18,38 @@ app.layout = html.Div([
     dcc.Graph(
         figure={
 'data':[go.Scatter3d(
-            x=c['MagX'].tolist(),
+            x=c['MagY'].tolist(),
             y=c['MagY'].tolist(),
-            z=c['MagZ'].tolist()
+            z=c['MagY'].tolist(),
 
-)]}
+
+
+)]},style={'height':'100vh','width':'33%'}
+
+    ),   dcc.Graph(
+        figure={
+'data':[go.Scatter3d(
+            x=c['MagY'].tolist(),
+            y=c['MagY'].tolist(),
+            z=c['MagY'].tolist(),
+
+
+
+)]},style={'height':'100vh','width':'33%'}
+
+    ),   dcc.Graph(
+        figure={
+'data':[go.Scatter3d(
+            x=c['MagZ'].tolist(),
+            y=c['MagY'].tolist(),
+            z=c['MagZ'].tolist(),
+
+
+
+)]},style={'height':'100vh','width':'33%'}
 
     )
-    ],style={'height':'200%'})
+    ],className='row')
 
 
 
